@@ -11,6 +11,8 @@ class ExamplePipeline(object):
     def process_item(self, item, spider):
         item["crawled"] = datetime.utcnow()
         item["spider"] = spider.name
+        del item['image_paths']
+        del item['image_urls']
         return item
 
 class MyImagesPipeline(ImagesPipeline):
