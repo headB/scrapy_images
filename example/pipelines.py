@@ -14,6 +14,8 @@ class ExamplePipeline(object):
         return item
 
 class MyImagesPipeline(ImagesPipeline):
+
+
     def get_media_requests(self, item, info):
           for image_url in item['image_urls']:
               yield Request(image_url)
@@ -23,4 +25,4 @@ class MyImagesPipeline(ImagesPipeline):
          if not image_path:
              raise DropItem('Item contains no images')
          item['image_paths'] = image_path
-         #return item
+         return item
