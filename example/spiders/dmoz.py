@@ -15,13 +15,10 @@ class DmozSpider(CrawlSpider):
     ]
 
     def parse_directory(self, response):
-        items1 = baiduTieba()
+        #items1 = baiduTieba()
         items = baiduTieba()
         items['title'] = "".join(response.xpath("//title/text()").extract())
         x1 = response.xpath("//img[@class='BDE_Image']/@src").extract()
-        items['images_urls'] = "".join(x1)
-        for x in x1:
-            #print(x)
-            yield {"images_urls":x}
+        items['image_urls'] = x1
         yield items
 

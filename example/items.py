@@ -21,8 +21,8 @@ class baiduTieba(Item):
     description = Field()
     crawled = Field()
     spider = Field()
-    images_urls = Field()
-    images = Field()
+    image_urls = Field()
+    image_paths = Field()
 
 
 class ExampleLoader(ItemLoader):

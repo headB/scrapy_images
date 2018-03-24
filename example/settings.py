@@ -21,9 +21,11 @@ SCHEDULER_PERSIST = True
 #REDIS_PORT = 6379
 
 ITEM_PIPELINES = {
-    'example.pipelines.ExamplePipeline': 300,
-    'scrapy.pipelines.images.ImagesPipeline': 1,
+    # 'example.pipelines.ExamplePipeline': 300,
+    #'scrapy.pipelines.images.ImagesPipeline': 1,
+    'example.pipelines.MyImagesPipeline':1,
     'scrapy_redis.pipelines.RedisPipeline': 400,
+    'example.pipelines.ExamplePipeline': 300,
 }
 
 IMAGES_STORE = 'F:\\pythonTest\\images'
